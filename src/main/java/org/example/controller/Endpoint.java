@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Endpoint {
     @RequestMapping("/")
-    public ResponseEntity<String> index()
+    public ResponseEntity<String> index(@RequestBody UserInput userInput)
     {
+        System.out.println(userInput.getInput());
         return ResponseEntity.ok("Data fetched from the user");
     }
 }
